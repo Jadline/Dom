@@ -1,32 +1,3 @@
-//Dom Manipulation
-
-//GetElementById
-// const body = document.body;
-const title = document.getElementById('main-heading');
-console.log(title);
-
-//GetElementByClassName()
-const listitem = document.getElementsByClassName('list-items');
-console.log(listitem);
-
-
-//GetElementByTagName
-
-const my_li = document.getElementsByTagName('li');
-console.log(my_li)
-
-
-//querySelector()
-//selects the first item ggiven of the query selectors 
- const  container = document.querySelector('div');
- console.log(container);
-
- const containers = document.querySelectorAll('div');
- console.log(containers);
-
-
-
-//querySelectorAll()
 
 
 
@@ -41,6 +12,18 @@ mylistitems.forEach(item => {
     item.style.fontSize = '20px';
 });
 
-// for(i = 0,i < mylistitems.length,i++){
-//     mylistitems.style.fontSize ='20px';
-// }
+
+
+//CREATING ELEMENTS
+const ul = document.querySelector('ul');
+const li = document.createElement('li');
+
+ul.appendChild(li);
+const listitems = document.querySelector('.list-items');
+console.log(listitems.innerText);
+console.log(listitems.textContent);
+console.log(listitems.innerHTML);
+
+li.innerText = 'X-men';
+
+li.setAttribute('id','main-heading');
