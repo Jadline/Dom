@@ -15,10 +15,15 @@ mylistitems.forEach(item => {
 
 
 //CREATING ELEMENTS
-const ul = document.querySelector('ul');
-const li = document.createElement('li');
 
-ul.appendChild(li);
+const ul = document.querySelector('ul');
+
+console.log(ul);
+const li = document.createElement('li');
+ul.append(li);
+
+
+
 const listitems = document.querySelector('.list-items');
 console.log(listitems.innerText);
 console.log(listitems.textContent);
