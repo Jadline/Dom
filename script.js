@@ -27,3 +27,20 @@ console.log(my_li)
 
 
 //querySelectorAll()
+
+
+
+const mytitle = document.querySelector('#main-heading');
+mytitle.style.color ='red';
+mytitle.style.backgroundColor = 'aqua';
+console.log(mytitle);
+
+const mylistitems = document.querySelectorAll('.list-items');
+
+mylistitems.forEach(item => {
+    item.style.fontSize = '20px';
+});
+
+// for(i = 0,i < mylistitems.length,i++){
+//     mylistitems.style.fontSize ='20px';
+// }
