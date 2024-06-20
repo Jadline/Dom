@@ -22,13 +22,13 @@ console.log(ul);
 const li = document.createElement('li');
 ul.append(li);
 
-
-
-const listitems = document.querySelector('.list-items');
-console.log(listitems.innerText);
-console.log(listitems.textContent);
-console.log(listitems.innerHTML);
+//modifying the text
 
 li.innerText = 'X-men';
 
 li.setAttribute('id','main-heading');
+li.removeAttribute('id');
+
+const title = document.querySelector('main-heading');
+
+console.log(title.getAttribute('id'));
