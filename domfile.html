@@ -1,0 +1,142 @@
+<!-- What is DOM - api for manipulating html documents
+
+What is nodes and type of nodes
+
+Selecting elements using Dom
+
+1.getElementById
+2.getElementbyName
+3.getElementbyTagName
+4.GetElementbyClassName
+5.querySelector and queryselectorall
+
+
+Traversing elements
+1.Selecting parent elements
+2.selecting child elements
+3.selecting sibling elements
+
+Manipulating html elements
+1.CreateElement
+2.appendchild
+textcontent
+innerHtml
+after
+append
+prepend
+insertAdjacentHtml
+replaceChild
+cloneNode
+removechild
+insertbefore
+
+Attribute Methods
+getAttribute
+setAttribute
+hasAttribute
+removeattribute
+
+Manipulating elements styles
+style property
+csstext
+getcomputedstyle
+classname property
+classlist property
+
+Javascript events
+What is event 
+event bubbling and event capturing
+event handler in html attributes
+dom level and event handlers
+addeventlisteners
+removeeventlistener
+event objects
+different types of events 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div>
+        <h1 class="message">First Heading</h1>
+        <div id="container">
+            <h1 class="message">second Heading</h1>
+            <h1 class="message">third Heading</h1>
+            <h1 class="message">fourth Heading</h1>
+        </div>
+        
+
+    
+        <!-- <p id="message">Javascript Dom</p>
+        <input type="radio" name='language' value="js">
+        <input type="radio" name='language' value="python"> -->
+      
+    </div> -->
+    <!-- <div class="title">
+        <p >Welcome to GreatStack 1</p>
+        <p class="second">Welcome to GreatStack 2</p>
+        <p >Welcome to GreatStack 3</p>
+        <p >Welcome to GreatStack 4</p>
+    </div> -->
+    <ul  id ='menu'>
+        <li>Home</li>
+        <li>About</li>
+        <li>blog</li>
+        <li style="display:none;">Contact</li>
+        
+    </ul>
+
+    
+    <script>
+    //   let cont = document.getElementById('container');
+    //   let msg = cont.getElementsByClassName('message');
+    //   console.log(msg);
+    // let msg = document.querySelector('.message');
+    // console.log(msg);
+    // let msg = document.querySelectorAll('div');
+    // console.log(msg);
+    // let txt = document.querySelector('.text');
+    // console.log(txt.parentNode);
+    // let second = document.querySelector('.second');
+    // console.log(second.nextElementSibling);
+    // let div = document.createElement('div');
+   
+    // div.innerHTML = "<p>Welcome to great Stack 7</p>";
+
+    // div.id = "title";
+    // console.log(div);
+    let menu = document.getElementById('menu');
+
+    // let list = document.createElement('li');
+    // list.innerHTML = 'other';
+    // menu.appendChild(list);
+    // console.log(menu.textContent);
+    // console.log(menu.innerText);
+
+    // //text content = to get the contents of a node and its descendants=all the html contents
+    // //inner text returns only visible text
+    // menu.textContent = 'hello'; // overrides the other existing content
+    // //innerHtml accepts the tags and adds the contents too to the webpage
+    // menu.innerHTML = "<h1>Hello!</h1>";
+
+    //after() method to insert one or more nodes after an element
+    // menu.after(h1);
+    //the difference between append and appendchild is that"
+    //append can add multiple nodes and can take a string 
+    let heading = document.createElement('h1');
+    // heading.innerHTML = 'Hey guys!';
+    menu.insertAdjacentHTML("afterend",'Hello guys!')
+    // menu.prepend(heading); //adds the element before the parent node
+
+
+
+
+    </script>
+</body>
+</html>
