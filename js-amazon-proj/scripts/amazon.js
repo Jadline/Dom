@@ -80,7 +80,7 @@ function createHTML () {
           Added
         </div>
     
-        <button class="add-to-cart-button button-primary js-add-to-cart-button">
+        <button class="add-to-cart-button button-primary js-add-to-cart-button  data-product-id="${product.id}" ">
           Add to Cart
         </button>
       </div>`
@@ -88,16 +88,34 @@ function createHTML () {
     
     })
 
+   
+
 }
 createHTML()
 document.querySelector('.js-product-grid').innerHTML = productsHTML;
 
-document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
-    button.addEventListener('click',() => {
-        cart.push {
-            productName  : product.name,
-            cartQuantity : 2
+let matchingItem;
+let cartQuantity = 0;
 
+document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
+
+    button.addEventListener('click',() => {
+        products.forEach((product) => {
+            const productId = button.dataset.productId
+    
+            if (productId === product.id){
+                matchingItem = product
+            }
+        })
+        if(matchingItem){
+           cart.Quantity += 1
         }
+        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+
     })
+
+    
+
+   
+
 })
