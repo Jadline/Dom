@@ -1,17 +1,19 @@
 import {cart} from "../data/cart.js"
 import {products} from "../data/products.js"
 
+let matchingProductHTML = '';
+
 cart.forEach((cartItem) => {
   const productId = cartItem.productId
 
   let matchingProduct;
   products.forEach((product) => {
-    if(productId === product.id){
+    if(product.id === productId){
       matchingProduct = product
 
     }
   })
-  let matchingProductHTML = '';
+  
 
   if(matchingProduct){
     matchingProductHTML += `<div class="cart-item-container">
