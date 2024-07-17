@@ -103,7 +103,7 @@ function UpdateCartQuantity() {
     totalCartQuantity += item.quantity;
 
   })
-  document.querySelector('.cart-quantity-text').innerHTML = totalCartQuantity;
+  document.querySelector('.cart-quantity-text').textContent= totalCartQuantity;
     
 
 }
