@@ -64,3 +64,16 @@ export function removeFromCart(productId){
   SaveToStorage()
   console.log("Cart after removing:", cart); 
 }
+export function updateDeliveryOption(productId,deliveryOptionId){
+  // we need to know the product we have updated and the deliveryoption
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if(productId === cartItem.productId){
+      matchingItem = cartItem
+    }
+  })
+
+  matchingItem.deliveryOptionId = deliveryOptionId
+  SaveToStorage()
+}
