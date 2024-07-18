@@ -1,8 +1,9 @@
-import {cart,removeFromCart,updateDeliveryOption} from "../data/cart.js"
-import {products} from "../data/products.js"
 import {hello} from "https://unpkg.com/supersimpledev@1.0.1/hello.esm.js"
 import  dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js"
+import {cart,removeFromCart,updateDeliveryOption} from "../data/cart.js"
+import {products} from "../data/products.js"
 import { deliveryOptions} from "../data/deliveryOptions.js"
+
 //Named export,default export
 
 
@@ -11,9 +12,15 @@ hello()
 const today =  dayjs()
 const deliveryDate = today.add(7,"days")
 console.log(deliveryDate.format('dddd, MMMM D'))
+// console.log(deliveryOptions[0].deliveryDays)
+console.log(cart)
+console.log(deliveryOptions);
+console.log('Looking for delivery option with id:', deliveryOptions[0].id);
+console.log('Looking for delivery option with id:', deliveryOptions[1].id);
+console.log('Looking for delivery option with id:', deliveryOptions[2].id);
+
 
 let matchingProductHTML = '';
-
 function deliveryOptionsHTML (matchingProduct,cartItem){
   let optionsHTML = ''
   deliveryOptions.forEach((deliveryOption) => {
@@ -44,6 +51,9 @@ function deliveryOptionsHTML (matchingProduct,cartItem){
   return optionsHTML
 }
 
+
+
+
 cart.forEach((cartItem) => {
   const productId = cartItem.productId
 
@@ -58,20 +68,71 @@ cart.forEach((cartItem) => {
   //   }
   // })
 
-const deliveryOptionId = cartItem.deliveryOptionId
-let deliveryOption ;
+// const deliveryOptionId = cartItem.deliveryOptionId
+// let deliveryOption ;
 
+// deliveryOptions.forEach((option) => {
+//   if (option.id === deliveryOptionId){
+//     deliveryOption = option
+//   }
+// });
+// console.log(deliveryOption)
+// const today = dayjs()
+// console.log(today)
+// const deliveryDate = today.add(deliveryOption.deliveryDays,"days")
+// console.log(deliveryDate,'deliverydate')
+// const dateString = deliveryDate.format('dddd,  MMMM D')
+// console.log(dateString)
+// deliveryOptions.forEach((option) => {
+//   if (option.id === deliveryOptionId){
+//       deliveryOption = option;
+//   }
+// });
+
+// // Add a check before accessing deliveryOption properties
+//   if (deliveryOption) {
+//     const today = dayjs();
+//     const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
+//     console.log(deliveryDate)
+//     console.log(typeof deliveryDate)
+//     const dateString = deliveryDate.format('dddd, MMMM D');
+//     console.log(dateString)
+//     // Proceed with using deliveryOption properties
+//   } else {
+//     console.error(`Delivery option with id ${deliveryOptionId} not found.`);
+//     // Handle the case where deliveryOption is undefined
+//   }
+
+//   if (!matchingProduct) {
+//     console.error(`Product with id ${productId} not found.`);
+//     return;
+// }
+
+const deliveryOptionId = cartItem.deliveryOptionId;
+
+let deliveryOption;
 deliveryOptions.forEach((option) => {
-  if (option.id === deliveryOptionId){
+  if(option.id === deliveryOptionId){
     deliveryOption = option
+
   }
-});
-const today = dayjs()
-const deliveryDate = today.add(deliveryOption.deliveryDays,"days")
-const dateString = deliveryDate.format('dddd,  MMMM D')
+})
+// const deliveryOption = deliveryOptions.find(option => option.id === deliveryOptionId);
+
+if (!deliveryOption) {
+    console.error(`Delivery option with id ${deliveryOptionId} not found.`);
+    return;
+}
+
+const today = dayjs();
+const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
+const dateString = deliveryDate.format('dddd, MMMM D'); // dateString is defined here
 
 
-  if (matchingProduct) {
+
+  // if (matchingProduct) {
+
+
     matchingProductHTML += `
         <div class="cart-item-container js-cart-container-${matchingProduct.id}">
             <div class="delivery-date">
@@ -106,7 +167,6 @@ const dateString = deliveryDate.format('dddd,  MMMM D')
                 </div>
             </div>
         </div>`
-}
 
 })
 document.querySelector('.js-order-summary').innerHTML = matchingProductHTML;
