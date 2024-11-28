@@ -1,0 +1,51 @@
+:root {
+    -Dark--cyan: hsl(158, 36%, 37%);
+    -Cream: hsl(30, 38%, 92%);
+    -Very--dark--blue: hsl(212, 21%, 14%);
+    -Dark-grayish-blue: hsl(228, 12%, 48%);
+    -White: hsl(0, 0%, 100%);
+}
+/* font-family: "Montserrat", sans-serif; */
+/* font-family: "Fraunces", serif; */
+html{
+    font-size : 62.5%;
+}
+*,*::after,*::before {
+    box-sizing : border-box;
+    padding : 0;
+    margin :0;
+}
+body {
+    background-color : hsl(30, 38%, 92%);
+    display : grid;
+    place-items :center;
+    background-color :yellow;
+    
+}
+img {
+    display : block;
+    max-width : 100%;
+}
+.product-container {
+    display : flex;
+    margin:0 auto;
+    background-color :red;
+    align-items : center;
+    max-width : 45%;
+    margin-top : 3%;
+    
+}
+.product-image {
+    max-width : 20%;
+    min-height : 10%;
+}
+.main-container {
+   
+    width : auto;
+    background-color : #fc2d;
+}
+.name-of-product {
+    font-size : 1.2rem;
+    text-transform : uppercase;
+    letter-spacing : 0.4rem;
+}
