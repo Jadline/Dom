@@ -19,8 +19,8 @@ body {
     background-color : hsl(30, 38%, 92%);
     display : grid;
     place-items :center;
-    background-color :yellow;
-    
+    /* background-color :yellow; */
+     
 }
 img {
     display : block;
@@ -28,24 +28,110 @@ img {
 }
 .product-container {
     display : flex;
-    margin:0 auto;
-    background-color :red;
-    align-items : center;
+    margin:10rem auto;
     max-width : 45%;
-    margin-top : 3%;
+    border-radius : 2rem;
     
 }
 .product-image {
-    max-width : 20%;
-    min-height : 10%;
+   max-width : 50%;
+   border-top-left-radius: 0.7rem;
+   border-bottom-left-radius: 0.7rem;
+ 
+    
 }
 .main-container {
-   
     width : auto;
-    background-color : #fc2d;
+    /* background-color : #fc2d; */
+    padding : 2rem 2rem;
+    background-color :#fff;
+    border-top-right-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+    display : flex;
+    flex-direction : column;
+    
+  
+    
 }
 .name-of-product {
     font-size : 1.2rem;
     text-transform : uppercase;
-    letter-spacing : 0.4rem;
+    letter-spacing : 0.2rem;
+    color : hsl(228, 12%, 48%);
+    font-family: "Montserrat", sans-serif;
+    
+}
+h1{
+    font-size : 3.2rem;
+    margin-bottom :1.5rem;
+}
+.product-description {
+    font-size : 1.4rem;
+    margin-bottom : 2rem;
+    line-height : 1.4;
+    color : hsl(228, 12%, 48%);
+    font-family: "Montserrat", sans-serif;
+}
+.price {
+    display : flex;
+    gap : 1.5rem;
+    margin-bottom : 2rem;
+}
+.add-to-cart-btn {
+    display : flex;
+    background-color : hsl(158, 36%, 37%);
+    /* gap : 1.4rem; */
+    justify-content : center;
+    gap : 1.5rem;
+    padding-inline : 2rem;
+    padding-block : 0.8rem;
+    border : none;
+    border-radius : 0.5rem;
+    align-items : center;
+    
+}
+.product-price {
+    font-size : 3.2rem;
+    color : hsl(158, 36%, 37%);
+    font-family: "Fraunces", serif;
+}
+.add-to-cart-btn p {
+    color : #fff;
+    font-weight : 600;
+}
+.product-discount {
+    text-decoration : line-through;
+    color : hsl(228, 12%, 48%);
+}
+@media only screen and (max-width : 767px){
+    .product-container {
+        flex-direction : column;
+        background-color :red;
+    }
+    .product-image {
+        max-width : 100%;
+    }
+
+}
+@media only screen and (max-width : 500px){
+    .product-container {
+        flex-direction : column;
+        background-color :red;
+    }
+    .product-image {
+        max-width : 100%;
+    }
+
+
+}
+@media only screen and (max-width : 375px){
+    .product-container {
+        flex-direction : column;
+        background-color :red;
+    }
+    .product-image {
+        max-width : 100%;
+    }
+
+
 }
